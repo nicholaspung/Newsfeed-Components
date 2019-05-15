@@ -27,6 +27,5 @@ const article = document.querySelectorAll(".article");
 let articles = [];
 
 article.forEach((e, i) => {
-  console.log(e);
   articles[i] = new Article(e);
 });
