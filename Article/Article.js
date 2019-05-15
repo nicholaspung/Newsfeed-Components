@@ -26,6 +26,6 @@ const article = document.querySelectorAll(".article");
 // and create a new instance of Article by passing in each article as a parameter to the Article class.
 let articles = [];
 
-article.forEach((e, i) => {
-  articles[i] = new Article(e);
+article.forEach(e => {
+  const articleInstance = new Article(e);
 });
