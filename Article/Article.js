@@ -29,3 +29,7 @@ let articles = [];
 article.forEach(e => {
   const articleInstance = new Article(e);
 });
+
+// Tweenmax.to(target, duration, {vars});
+// ex. Tweenmax.to(".logo"(selects class or can pass in a DOM element, can also pass in jQuery selector 
+// or array of objects), 2(2 seconds), {vars}(select CSS properties));
