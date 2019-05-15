@@ -8,7 +8,7 @@ class Article {
     this.expandButton = domElement.querySelector(".expandButton");
     console.log(this.expandButton.parentNode);
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-    this.expandButton.textContent = "expand";
+    this.expandButton.textContent = "Click to Expand";
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener('click', () => { this.expandArticle() });
   }
@@ -17,7 +17,7 @@ class Article {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     this.expandButton.parentNode.classList.toggle("article-open");
     
-    this.expandButton.textContent == 'expand' ? this.expandButton.textContent = 'collapse' : this.expandButton.textContent = 'expand';
+    this.expandButton.textContent == 'Click to Expand' ? this.expandButton.textContent = 'Click to Collapse' : this.expandButton.textContent = 'Click to Expand';
     this.expandButton.parentNode.classList.contains("article-open") ? TweenMax.fromTo(this.expandButton.parentNode, 1, {height:50}, {height:400}) : TweenMax.fromTo(this.expandButton.parentNode, 1, {height:400}, {height:50});
   }
 }
@@ -33,6 +33,3 @@ articles.forEach(e => {
 const articleInstance = new Article(e);
 });
 
-// Tweenmax.to(target, duration, {vars});
-// ex. Tweenmax.to(".logo"(selects class or can pass in a DOM element, can also pass in jQuery selector 
-// or array of objects), 2(2 seconds), {vars}(select CSS properties));
