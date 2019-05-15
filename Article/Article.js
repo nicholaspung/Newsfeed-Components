@@ -15,19 +15,28 @@ class Article {
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     this.domElement.classList.toggle("article-open");
+    
+    this.expandButton.textContent == 'expand' ? this.expandButton.textContent = 'collapse' : this.expandButton.textContent = 'expand';
+    // this.expandButton.classList.contains('article-open') ? TweenMax.fromTo(".article-open", 1, {height:400}, {height:50}) : TweenMax.fromTo(".article", 1, {height:50}, {height:400});
+    // if (this.expandButton.textContent == 'expand') {
+    //   this.expandButton.textContent = 'collapse';
+    //   TweenMax.from(".article", 1, {height:400});
+    // } else {
+    //   this.expandButton.textContent = 'expand';
+    //   TweenMax.fromTo(".article", 1, {height:400}, {height:50});
+    // }
   }
 }
 
 // START HERE: 
 
 // - Select all classes named ".article" and assign that value to the articles variable.  
-const article = document.querySelectorAll(".article");
+const articles = document.querySelectorAll(".article");
 // - With your selection in place, now chain .forEach() on to the articles variable to iterate over the articles NodeList 
 // and create a new instance of Article by passing in each article as a parameter to the Article class.
-let articles = [];
 
-article.forEach(e => {
-  const articleInstance = new Article(e);
+articles.forEach(e => {
+const articleInstance = new Article(e);
 });
 
 // Tweenmax.to(target, duration, {vars});
