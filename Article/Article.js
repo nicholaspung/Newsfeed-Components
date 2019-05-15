@@ -6,6 +6,7 @@ class Article {
     this.domElement = domElement;
     // create a reference to the ".expandButton" class. 
     this.expandButton = domElement.querySelector(".expandButton");
+    console.log(this.expandButton.parentNode);
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.textContent = "expand";
     // Set a click handler on the expandButton reference, calling the expandArticle method.
@@ -14,17 +15,10 @@ class Article {
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.domElement.classList.toggle("article-open");
+    this.expandButton.parentNode.classList.toggle("article-open");
     
     this.expandButton.textContent == 'expand' ? this.expandButton.textContent = 'collapse' : this.expandButton.textContent = 'expand';
-    // this.expandButton.classList.contains('article-open') ? TweenMax.fromTo(".article-open", 1, {height:400}, {height:50}) : TweenMax.fromTo(".article", 1, {height:50}, {height:400});
-    // if (this.expandButton.textContent == 'expand') {
-    //   this.expandButton.textContent = 'collapse';
-    //   TweenMax.from(".article", 1, {height:400});
-    // } else {
-    //   this.expandButton.textContent = 'expand';
-    //   TweenMax.fromTo(".article", 1, {height:400}, {height:50});
-    // }
+    this.expandButton.parentNode.classList.contains("article-open") ? TweenMax.fromTo(this.expandButton.parentNode, 1, {height:50}, {height:400}) : TweenMax.fromTo(this.expandButton.parentNode, 1, {height:400}, {height:50});
   }
 }
 
